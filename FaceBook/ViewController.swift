@@ -7,13 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class ViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource , PostViewControllerDelegate {
+
+
 
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 250
+
     }
 
     private var timeLines: [Timeline] = Timelines.createTimelines() {
@@ -30,21 +35,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+            cell.selectionStyle = .none
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineCell", for: indexPath) as! TimeLineTableViewCell
             let timeline = timeLines[indexPath.row - 1]
             cell.timeLine = timeline
+            cell.selectionStyle = .none
             return cell
         }
+    }
+    func postViewController(viewController: PostViewController, timeline: Timeline) {
+        var newTimeLines = timeLines
+        newTimeLines.insert(timeline, at: 0)
+        timeLines = newTimeLines
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
             return 80
         default:
-            return 250
+            tableView.estimatedRowHeight = 250
+            return UITableView.automaticDimension
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let storybord = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storybord.instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
+            let timeline = timeLines[0].user
+            let user = timeline
+            vc.user = user
+            vc.delegate = self
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 

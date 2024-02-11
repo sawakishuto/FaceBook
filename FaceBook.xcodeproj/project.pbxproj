@@ -19,6 +19,8 @@
 		08537B352B785A8D00F42C9A /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08537B342B785A8D00F42C9A /* TimeLine.swift */; };
 		08537B372B785B6300F42C9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08537B362B785B6300F42C9A /* User.swift */; };
 		08537B392B785C7000F42C9A /* Timelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08537B382B785C7000F42C9A /* Timelines.swift */; };
+		08537B3C2B786D9E00F42C9A /* TimeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08537B3B2B786D9E00F42C9A /* TimeLineTableViewCell.swift */; };
+		08537B3E2B78AA1D00F42C9A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08537B3D2B78AA1D00F42C9A /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		08537B342B785A8D00F42C9A /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
 		08537B362B785B6300F42C9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		08537B382B785C7000F42C9A /* Timelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timelines.swift; sourceTree = "<group>"; };
+		08537B3B2B786D9E00F42C9A /* TimeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewCell.swift; sourceTree = "<group>"; };
+		08537B3D2B78AA1D00F42C9A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				08537B042B78582900F42C9A /* AppDelegate.swift */,
 				08537B062B78582900F42C9A /* SceneDelegate.swift */,
 				08537B082B78582900F42C9A /* ViewController.swift */,
+				08537B3D2B78AA1D00F42C9A /* PostViewController.swift */,
+				08537B3B2B786D9E00F42C9A /* TimeLineTableViewCell.swift */,
 				08537B3A2B785CF400F42C9A /* TimeLine */,
 				08537B0A2B78582900F42C9A /* Main.storyboard */,
 				08537B0D2B78582B00F42C9A /* Assets.xcassets */,
@@ -275,11 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08537B3E2B78AA1D00F42C9A /* PostViewController.swift in Sources */,
 				08537B392B785C7000F42C9A /* Timelines.swift in Sources */,
 				08537B352B785A8D00F42C9A /* TimeLine.swift in Sources */,
 				08537B092B78582900F42C9A /* ViewController.swift in Sources */,
 				08537B052B78582900F42C9A /* AppDelegate.swift in Sources */,
 				08537B372B785B6300F42C9A /* User.swift in Sources */,
+				08537B3C2B786D9E00F42C9A /* TimeLineTableViewCell.swift in Sources */,
 				08537B072B78582900F42C9A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
