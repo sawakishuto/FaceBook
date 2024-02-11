@@ -35,7 +35,6 @@ class ViewController: UIViewController, UITableViewDelegate,  UITableViewDataSou
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-            cell.selectionStyle = .none
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineCell", for: indexPath) as! TimeLineTableViewCell
@@ -55,11 +54,11 @@ class ViewController: UIViewController, UITableViewDelegate,  UITableViewDataSou
         case 0:
             return 80
         default:
-            tableView.estimatedRowHeight = 250
-            return UITableView.automaticDimension
+            return 250
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)")
         if indexPath.row == 0 {
             let storybord = UIStoryboard(name: "Main", bundle: nil)
             let vc = storybord.instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
@@ -67,7 +66,8 @@ class ViewController: UIViewController, UITableViewDelegate,  UITableViewDataSou
             let user = timeline
             vc.user = user
             vc.delegate = self
-            self.navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true)
         }
     }
     

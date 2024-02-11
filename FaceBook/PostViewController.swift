@@ -33,17 +33,17 @@ class PostViewController: UIViewController, UITextViewDelegate {
     }
 
     @IBAction func PostButtonTapped(_ sender: UIBarButtonItem) {
-        let timeline = Timeline(id: 100, user: User(id: 100, name: "しゅうと", imageName: "yuzushio"), body: postTextView.text, commentCount: 0, likeCount: 0, isLiked: false)
+        let timeline = Timeline(id: 100, user: User(id: 100, name: user.name, imageName: user.imageName), body: postTextView.text, commentCount: 0, likeCount: 0, isLiked: false)
         delegate.postViewController(viewController: self, timeline: timeline)
         dismiss(animated: true)
     }
      func textViewDidChange(_ textView: UITextView) {
         if textView.text == "" {
-            postButton.isEnabled = true
+            postButton.isEnabled = false
             postButton.tintColor = UIColor.lightGray
         } else {
             placeholderLabel.isHidden = true
-            postButton.isEnabled = false
+            postButton.isEnabled = true
             postButton.tintColor = nil
         }
     }
